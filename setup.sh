@@ -14,12 +14,14 @@ see [[ubuntu-server-setup-raid-1]]
 
 sudo curl -s ${UBUNTU_SCRIPTS_PATH}/bash-setup.sh | bash
 
-# fluentbit + Timber setup
+# fluentbit + Timber setup and run
 curl -s ${UBUNTU_SCRIPTS_PATH}/setup-fluentbit.sh | bash
 curl -s ${UBUNTU_SCRIPTS_PATH}/setup-fluentbit-timber.sh | TIMBER_API_KEY=${TIMBER_API_KEY} TIMBER_SOURCE_ID=${TIMBER_SOURCE_ID} HOSTNAME="reverse-proxy-vm-${HOSTNAME}" bash
+sudo systemctl start td-agent-bit
 
-# docker setup
+# docker setup and run
 curl -s ${UBUNTU_SCRIPTS_PATH}/docker-setup.sh | bash
+sudo systemctl start docker
 
 # docker-compose setup
 curl -s ${UBUNTU_SCRIPTS_PATH}/docker-compose-setup.sh | bash
