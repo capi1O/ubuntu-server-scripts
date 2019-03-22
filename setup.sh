@@ -26,7 +26,7 @@ curl -s ${UBUNTU_SCRIPTS_PATH}/docker-compose-setup.sh | bash
 
 # HTTPS reverse proxy (let's encrypt) [docker]
 # create .env with required env vars then
-curl -s https://raw.githubusercontent.com/monkeydri/docker-https-nginx-reverse-proxy/master/setup.sh | bash
+curl -s https://raw.githubusercontent.com/monkeydri/reverse-proxy/master/setup.sh | bash
 
 # seafile [docker] => https://github.com/monkeydri/seafile-server#quickstart
 
